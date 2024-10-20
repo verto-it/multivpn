@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="multivpn.Views.VpnDetailPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:multivpn.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel Padding="20" Spacing="10">
+        <TextBlock x:Name="VpnNameTextBlock" FontSize="24" FontWeight="Bold" />
+        <TextBlock Name="IsConnectedIndicator" FontSize="16" Text="Connected" Visibility="Collapsed" />
+        <Button Name="ConnectButton" Content="Connect" Click="OnConnectClick" Visibility="Visible"/>
+        <Button Name="DisconnectButton" Content="Disconnect" Click="OnDisconnectClick" Visibility="Collapsed"/>
+        <Button Content="Edit" Click="OnEditClick" />
+        <Button Content="Delete" Click="OnDeleteClick" />
+    </StackPanel>
+</Page>

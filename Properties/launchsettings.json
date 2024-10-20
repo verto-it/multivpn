@@ -1,0 +1,10 @@
+﻿{
+    "profiles": {
+      "multivpn (Package)": {
+        "commandName": "MsixPackage"
+      },
+      "multivpn (Unpackaged)": {
+        "commandName": "Project"
+      }
+    }
+}
