@@ -10,7 +10,10 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <StackPanel Padding="20" Spacing="10">
-        <TextBlock Text="Add VPN Connection" FontSize="24" FontWeight="Bold" />
+        <TextBlock Text="Add VPN Connection" FontSize="24" FontWeight="Bold" x:Name="TitleTextBlock" />
+
+        <!-- VPN Name -->
+        <TextBox x:Name="VpnNameTextBox" PlaceholderText="Enter VPN Name" />
 
         <!-- VPN Type Selection -->
         <ComboBox x:Name="VpnTypeComboBox" PlaceholderText="Select VPN Type">

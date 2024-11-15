@@ -10,10 +10,13 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <StackPanel Padding="20" Spacing="10">
-        <TextBlock Text="Add VPN Connection" FontSize="24" FontWeight="Bold" />
+        <TextBlock x:ConnectionId='2' Text="Add VPN Connection" FontSize="24" FontWeight="Bold" x:Name="TitleTextBlock" />
+
+        <!-- VPN Name -->
+        <TextBox x:ConnectionId='3' x:Name="VpnNameTextBox" PlaceholderText="Enter VPN Name" />
 
         <!-- VPN Type Selection -->
-        <ComboBox x:ConnectionId='2' x:Name="VpnTypeComboBox" PlaceholderText="Select VPN Type">
+        <ComboBox x:ConnectionId='4' x:Name="VpnTypeComboBox" PlaceholderText="Select VPN Type">
             <ComboBoxItem Content="Wireguard" />
             <ComboBoxItem Content="OpenVPN" />
             <ComboBoxItem Content="IPSec" />
@@ -24,11 +27,11 @@
         <!-- Config File Upload -->
         <StackPanel>
             <TextBlock Text="VPN Configuration File" FontSize="16" />
-            <Button x:ConnectionId='4' Content="Select File"                           />
+            <Button x:ConnectionId='6' Content="Select File"                           />
         </StackPanel>
 
         <!-- Submit Button -->
-        <Button x:ConnectionId='3' Content="Submit"                     />
+        <Button x:ConnectionId='5' Content="Submit"                     />
     </StackPanel>
 </Page>
 

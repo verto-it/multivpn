@@ -71,6 +71,6 @@ public sealed partial class VpnDetailPage : Page
 
     private void OnDeleteClick(object sender, RoutedEventArgs e)
     {
-        // Handle VPN deletion logic here
+
     }
 }

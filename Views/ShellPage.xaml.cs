@@ -13,6 +13,27 @@ using Windows.System;
 namespace multivpn.Views;
 
 // TODO: Update NavigationViewItem titles and icons in ShellPage.xaml.
+
+public class VpnConfiguration
+{
+    public string Name
+    {
+        get; set;
+    }
+    public string Type
+    {
+        get; set;
+    }
+    public string Configuration
+    {
+        get; set;
+    }
+    public DateTime CreatedAt
+    {
+        get; set;
+    }
+}
+
 public sealed partial class ShellPage : Page
 {
     public ShellViewModel ViewModel
@@ -98,7 +119,7 @@ public sealed partial class ShellPage : Page
         var newItem = new NavigationViewItem
         {
             Content = vpnName,
-            Icon = new FontIcon { Glyph = "\uE77B" } // Example icon for VPN
+            Icon = new FontIcon { Glyph = "\uE77B" }
         };
 
         // Handle the item click event to navigate to the VPN details page
@@ -114,53 +135,34 @@ public sealed partial class ShellPage : Page
         NavigationViewControl.MenuItems.Add(newItem);
     }
 
-
-    protected async override void OnNavigatedTo(NavigationEventArgs e)
+    protected override void OnNavigatedTo(NavigationEventArgs e)
     {
         base.OnNavigatedTo(e);
 
-        // Load saved VPN configurations
-        await LoadVpnConfigurations();
-
-        // Handle VPN addition (if navigated with a new VPN)
-        if (e.Parameter is string vpnName && !string.IsNullOrEmpty(vpnName))
+        // Check if a VPN configuration is passed when navigating back from AddVPNPage
+        if (e.Parameter is VpnConfiguration vpnConfig)
         {
-            AddVpnToNavigationView(vpnName);
+            // Add the new VPN to the navigation view
+            AddVpnToNavigationView(vpnConfig.Name);
         }
+
+        // Load saved VPN configurations
+        LoadVpnConfigurations();
     }
-
-
 
     // Method to load VPN configurations from local storage
     private async Task LoadVpnConfigurations()
     {
-        // Get the local folder and VPN config file
         StorageFolder localFolder = ApplicationData.Current.LocalFolder;
-        const string vpnConfigFileName = "VpnConfigurations.json";
+        IReadOnlyList<StorageFile> files = await localFolder.GetFilesAsync();
 
-        try
-        {
-            StorageFile vpnConfigFile = await localFolder.GetFileAsync(vpnConfigFileName);
-            string json = await FileIO.ReadTextAsync(vpnConfigFile);
+        files = files.OrderByDescending(f => f.DateCreated).ToList();
 
-            if (!string.IsNullOrEmpty(json))
-            {
-                var vpnConfigs = JsonSerializer.Deserialize<List<VpnConfiguration>>(json);
-
-                // Add each VPN configuration to the sidebar
-                if (vpnConfigs != null)
-                {
-                    foreach (var vpnConfig in vpnConfigs)
-                    {
-                        AddVpnToNavigationView(vpnConfig.DisplayName);
-                    }
-                }
-            }
+        foreach (StorageFile file in files) {
+            string json = await FileIO.ReadTextAsync(file);
+            var vpnConfig = JsonSerializer.Deserialize<VpnConfiguration>(json);
+            AddVpnToNavigationView(vpnConfig.Name);
         }
-        catch (FileNotFoundException)
-        {
-            // Handle the case where the config file doesn't exist (first app launch)
-        }
+
     }
-
 }

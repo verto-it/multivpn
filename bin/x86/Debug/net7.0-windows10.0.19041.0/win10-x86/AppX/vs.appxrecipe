@@ -29,13 +29,13 @@
     <AppXManifest Include="I:\CSharp\multivpn\bin\x86\Debug\net7.0-windows10.0.19041.0\win10-x86\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-10-11T13:26:42.539</Modified>
+      <Modified>2024-11-15T23:46:55.981</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="I:\CSharp\multivpn\bin\x86\Debug\net7.0-windows10.0.19041.0\win10-x86\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-10-11T13:24:19.357</Modified>
+      <Modified>2024-11-15T23:08:15.830</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="I:\CSharp\multivpn\bin\x86\Debug\net7.0-windows10.0.19041.0\win10-x86\multivpn.runtimeconfig.json">
       <PackagePath>multivpn.runtimeconfig.json</PackagePath>
@@ -43,7 +43,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="I:\CSharp\multivpn\bin\x86\Debug\net7.0-windows10.0.19041.0\win10-x86\multivpn.dll">
       <PackagePath>multivpn.dll</PackagePath>
-      <Modified>2024-10-11T13:26:41.970</Modified>
+      <Modified>2024-11-15T23:46:55.820</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="I:\CSharp\multivpn\appsettings.json">
       <PackagePath>appsettings.json</PackagePath>
@@ -51,7 +51,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="I:\CSharp\multivpn\obj\x86\Debug\net7.0-windows10.0.19041.0\win10-x86\apphost.exe">
       <PackagePath>multivpn.exe</PackagePath>
-      <Modified>2024-10-11T13:26:42.361</Modified>
+      <Modified>2024-11-15T23:46:55.824</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="I:\CSharp\multivpn\bin\x86\Debug\net7.0-windows10.0.19041.0\win10-x86\multivpn.deps.json">
       <PackagePath>multivpn.deps.json</PackagePath>

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("multivpn")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+74e42e69b3b336e0d1c0fc8ca9760d7f7e4b51da")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+14dce3df7edf61c61efa66118a9ca28f99abe68c")]
 [assembly: System.Reflection.AssemblyProductAttribute("multivpn")]
 [assembly: System.Reflection.AssemblyTitleAttribute("multivpn")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
